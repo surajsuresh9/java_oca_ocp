@@ -1,4 +1,4 @@
-package concurrency;
+package com.concurrency;
 
 public class MyClass1 extends Thread {
     @Override

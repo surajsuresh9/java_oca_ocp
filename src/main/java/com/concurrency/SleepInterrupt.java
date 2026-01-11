@@ -1,4 +1,4 @@
-package concurrency;
+package com.concurrency;
 
 public class SleepInterrupt {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package concurrency;
+package com.concurrency;
 
 public class ConcurrencyDemo {
     /*
