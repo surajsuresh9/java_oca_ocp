@@ -1,5 +1,6 @@
 package com.streams;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -58,10 +59,10 @@ public class StreamDemo {
         Stream<String> fromList = list.stream();
 
         // parallel stream (operations are done in parallel rather than in sequence)
-        Stream<String> fromListparallel = list.parallelStream();
+        Stream<String> fromListParallel = list.parallelStream();
 
         // creating infinite streams
-        Stream<Double> randoms = Stream.generate(Math::random); // supplier
+        Stream<Double> randoms = Stream.generate(Math::random).limit(2); // supplier
         Stream<Integer> oddNumbers = Stream.iterate(1, n -> n + 2); // 1-seed, 2-unary operator
 
         // these streams are infinite, they generate values ad infinitum
@@ -71,6 +72,17 @@ public class StreamDemo {
 
         // create odd numbers less than 50
         Stream<Integer> oddNumbersUnder50 = Stream.iterate(1, n -> n < 50, n -> 50);//  1-seed, 2-predicate that can terminate stream when false is returned, 3-unary operator
+
+
+        // Putting the pipeline together
+        List<String> names = List.of("John", "George", "Paul", "Ringo");
+        // get first 2 names which are 4 chars long
+        names.stream()
+                .filter(n -> n.length() == 4)
+                .sorted(Comparator.reverseOrder())
+                .limit(2)
+                .forEach(System.out::println);
+
 
     }
 }
