@@ -9,7 +9,8 @@ public class OperatorsDemo {
                     - Binary operator:
                         a = b + c;
                     - Ternary operator:
-                        a = (b>0) ? 3 : 2;
+                        a = (b > 0) ? 3 : 2;
+
      */
 
     public static void main(String[] args) {
