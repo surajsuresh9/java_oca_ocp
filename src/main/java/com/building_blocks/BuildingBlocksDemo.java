@@ -84,7 +84,21 @@ public class BuildingBlocksDemo {
                     - java {A.java} -> executes the Java program
 
          */
+         /*
+                - Objects
+                    - object is an instance of the class (house -> blueprint)
+                    - new object is created using keyword new:
+                        Student s = new Student();
+                    - when object is created, the constructor of the object is called
+                    - if no constructor is provided, compiler will generate the default constructor
 
+                - Order of initialization
+                    - instance initializer - code block outside the method
+                    - order of initialization
+                        - fields and instance initializer blocks in order in which they appear
+                        - constructor runs in the end
+
+         */
 
     public static void main(String[] args) {
         System.out.println("First Name: " + args[0]);
@@ -97,5 +111,40 @@ class NumberGenerator {
     public static void main(String[] args) {
         Random random = new Random();
         System.out.println(random.nextInt(100));
+    }
+}
+
+
+class Employee {
+
+    public Employee() {
+        System.out.println("Employee is created");
+    }
+
+    public void Employee() { // this code will compile, this is a method, not a constructor
+        System.out.println("Employee is created");
+    }
+
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.Employee();
+    }
+}
+
+class Dog {
+    private String name = "Chip";
+
+    public Dog() {
+        name = "Teddy";
+        System.out.println("Inside the constructor...");
+    }
+
+    {
+        System.out.println("Inside the initializer block");
+    }
+
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        System.out.println(d.name);
     }
 }
